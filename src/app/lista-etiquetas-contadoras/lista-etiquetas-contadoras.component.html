@@ -1,7 +1,19 @@
-<ul>
-    <li *ngFor="let ec of etiquetas">
-      <cg-etiqueta-contadora frase={{ec.frase}} cantidad={{ec.cantidad}} id={{ec.id}}></cg-etiqueta-contadora>
-    </li>
-</ul>
+<div class="card">
+    <h5 class="card-header">Contadores de Giuli</h5>
+    <div class="card-body">
+      <h5 class="card-title">Conoces a Giuli? Si la respuesta es SI, sabrás como le gustan sus frases.</h5>
+      <p class="card-text">Ayudanos a contar cuantas veces dice sus famosas frases y colaborá con nuevas.</p>
+      <div class="row" *ngFor="let ec of etiquetas" style="margin-top:20px">
+          <div class="col-lg-12">
+              <cg-etiqueta-contadora frase={{ec.frase}} cantidad={{ec.cantidad}} id={{ec.id}}></cg-etiqueta-contadora>
+          </div>
+        </div>
+    </div>
+    <div class="card-footer">
+      <cg-etiqueta-contadora-add></cg-etiqueta-contadora-add>
+    </div>
+</div>
+    
+
 
   

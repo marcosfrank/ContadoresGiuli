@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { EtiquetaContadoraComponent } from './etiqueta-contadora/etiqueta-contadora.component';
 import { ListaEtiquetasContadorasComponent } from './lista-etiquetas-contadoras/lista-etiquetas-contadoras.component';
 import { EtiquetasContadorasService } from './etiquetas-contadoras.service';
+import { EtiquetaContadoraAddComponent } from './etiqueta-contadora-add/etiqueta-contadora-add.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     EtiquetaContadoraComponent,
-    ListaEtiquetasContadorasComponent
+    ListaEtiquetasContadorasComponent,
+    EtiquetaContadoraAddComponent
   ],
   imports: [
     BrowserModule,
