@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./etiqueta-contadora-add.component.css']
 })
 export class EtiquetaContadoraAddComponent implements OnInit {
-
+  frase:string;
   constructor() { }
 
   ngOnInit() {
   }
 
+  guardar():void{
+    alert(this.frase);
+  }
 }

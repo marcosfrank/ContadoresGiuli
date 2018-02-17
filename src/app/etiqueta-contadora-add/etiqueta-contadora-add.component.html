@@ -2,7 +2,14 @@
   <div class="form-group row">  
     <label for="fraseInput" class="col-lg-4 col-form-label">¿Querés agregar una frase? Agregala acá ----></label>
     <div class="col-lg-6">
-        <input type="text" class="form-control" id="fraseInput">
+        <div class="form-group">
+            <input type="text" class="form-control" id="frase" name="frase"
+            [(ngModel)]='frase' required pattern="^[^-*]*$" #name="ngModel">
+            <div [hidden]="name.valid || name.pristine"
+              class="alert alert-danger">
+              Validacion
+            </div>
+          </div>
     </div>
     <div class="col-lg-2">
       <button type="button" class="btn btn-secondary" 
@@ -10,7 +17,9 @@
         popoverTitle="¿Tu frase no aparece?" placement="top">
         <i class="fa fa-question-circle"></i>
       </button>
-      <button type="button" class="btn btn-success"><i class="fa fa-plus-circle"></i></button>
+      <button type="submit" class="btn btn-success" (click)="guardar()">
+        <i class="fa fa-plus-circle"></i>
+      </button>
     </div>
   </div>
 </form>

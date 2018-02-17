@@ -5,6 +5,7 @@ import { PopoverModule } from 'ngx-bootstrap/popover';
 import { NgModule } from '@angular/core';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 import { AppComponent } from './app.component';
 import { EtiquetaContadoraComponent } from './etiqueta-contadora/etiqueta-contadora.component';
 import { ListaEtiquetasContadorasComponent } from './lista-etiquetas-contadoras/lista-etiquetas-contadoras.component';
@@ -25,7 +26,8 @@ import { EtiquetaContadoraAddComponent } from './etiqueta-contadora-add/etiqueta
     ToastrModule.forRoot(),
     CommonModule,
     AngularFontAwesomeModule,
-    PopoverModule.forRoot()
+    PopoverModule.forRoot(),
+    FormsModule
   ],
   providers: [EtiquetasContadorasService],
   bootstrap: [AppComponent]
