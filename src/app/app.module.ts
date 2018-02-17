@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-
+import { PopoverModule } from 'ngx-bootstrap/popover';
 import { NgModule } from '@angular/core';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from "@angular/common";
@@ -24,7 +24,8 @@ import { EtiquetaContadoraAddComponent } from './etiqueta-contadora-add/etiqueta
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     CommonModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    PopoverModule.forRoot()
   ],
   providers: [EtiquetasContadorasService],
   bootstrap: [AppComponent]
