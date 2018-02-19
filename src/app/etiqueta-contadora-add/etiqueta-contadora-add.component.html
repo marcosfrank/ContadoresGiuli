@@ -4,19 +4,27 @@
     <div class="col-lg-6">
         <div class="form-group">
             <input type="text" class="form-control" id="frase" name="frase"
-            [(ngModel)]='frase' required pattern="^[^-*]*$" #name="ngModel">
-            <div [hidden]="name.valid || name.pristine"
+            [(ngModel)]='frase' required pattern="^[^-*]*$" minlength="5" #fraseInput="ngModel">
+            <div [hidden]="fraseInput.valid || fraseInput.pristine"
               class="alert alert-danger">
-              Validacion
+              <div *ngIf="fraseInput.errors?.required">
+                La frase es requerida.
+              </div>
+              <div *ngIf="fraseInput.errors?.minlength">
+                La frase debe tener al menos 5 caracteres.
+              </div>
+              <div *ngIf="fraseInput.errors?.pattern">
+                La frase no puede contener * o -.
+              </div>
             </div>
           </div>
     </div>
-    <div class="col-lg-2">
-      <button type="button" class="btn btn-secondary" 
-        popover="Las nuevas frases debreán ser aprobadas por los administradores"
-        popoverTitle="¿Tu frase no aparece?" placement="top">
-        <i class="fa fa-question-circle"></i>
-      </button>
+    <div>
+        <button type="button" class="btn btn-default btn-secondary" 
+          popover="Las nuevas frases debreán ser aprobadas por los administradores"
+          popoverTitle="¿Tu frase no aparece?" placement="top">
+          <i class="fa fa-question-circle"></i>
+        </button>
       <button type="submit" class="btn btn-success" (click)="guardar()">
         <i class="fa fa-plus-circle"></i>
       </button>
